@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>안녕하세요</title>
+</head>
+<body>
+  <h1 style="color: yellow;">안녕하세요</h1>
+  <div id="list" style="display: grid; grid-template-columns: repeat(5, 180px); gap: 4px;"></div>
+  <p id="result">이미지를 눌러 보세요</p>
+  <button onclick="alert('안녕하세요 반갑습니다')">클릭</button>
+
+  <script>
+    const list = document.getElementById("list");
+    const result = document.getElementById("result");
+    for (let i = 1; i <= 10; i++) {
+      const img = document.createElement("img");
+      img.src = "jeju.jpg";
+      img.alt = i + "번";
+      img.width = 180;
+      img.style.cursor = "pointer";
+      img.onclick = () => { alert(i + "번"); };
+      list.appendChild(img);
+    }
+  </script>
+</body>
+</html>
